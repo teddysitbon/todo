@@ -1,32 +1,205 @@
-.App {
+body{
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #f5f5f5;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+}
+.App{
+  max-width: 550px;
+  margin: 0 auto;
+}
+header h1{
+  color: rgb(175, 47, 47);
   text-align: center;
+  font-size: 50px;
+}
+section.todo-form > input {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  border: 0;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  background : white;
+  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
+  color: #4d4d4d;
+}
+section.todo-form > input::-webkit-input-placeholder {
+  font-style: italic;
+}
+section.todo-form > input:-moz-placeholder {
+  font-style: italic;  
+}
+section.todo-form > input::-moz-placeholder {
+  font-style: italic;  
+}
+section.todo-form > input:-ms-input-placeholder {  
+  font-style: italic; 
+}
+section.todo-form ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+section.todo-form ul .single-item{
+  position: relative;
+  font-size: 24px;
+  background-color : white;
+  border-bottom: 1px solid #ededed;
+}
+section.todo-form ul .single-item .see-item input{
+  opacity: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+}
+section.todo-form ul .single-item label{
+  padding-left: 30px;
+  padding-left: 30px;
+  padding: 20px 10px 20px 60px;
+  display: block;
+  cursor : text;
+}
+section.todo-form ul .single-item button{
+  position: absolute;
+  right : 10px;
+  top: 10px;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  color: #cc9a9a;
+  cursor: pointer;
+}
+section.todo-form ul .single-item.completed{
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+}
+section.todo-form ul .single-item{
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+section.todo-form ul .single-item.completed label{
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+footer{
+  color: #777;
+  padding: 10px 15px;
+  height: 25px;
+  position:relative;
+  border-top: 1px solid #e6e6e6;
+  background-color: white;
+}
+footer:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+footer > div{
+  display: inline-block;
+}
+footer > button{
+  float: right;
+}
+footer ul,
+footer ul li{
+  display: inline-block;
+}
+footer ul.nb-filters{
+  margin-left : 100px;
+}
+footer ul.nb-filters li{
+  margin-right : 10px;
+}
+footer button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 5px;
+}
+footer ul li.active,
+footer ul li:hover{
+  border-color : rgba(175, 47, 47, 0.2);
+}
+footer ul li{
+  padding : 2px 4px;
+  border-radius: 3px;
+  cursor : pointer;
+  border : 1px solid transparent;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.single-item .hide-item label,
+.single-item .hide-item item,
+.single-item .hide-item button{
+  display: none !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.single-item input.no-edit{
+  display: none;
 }
-
-.App-link {
-  color: #61dafb;
+section.todo-form ul .single-item.edit{
+  background: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+section.todo-form ul .single-item.edit .hide-item{
+  display: none;
+}
+.single-item .see-item,
+.single-item input.edit{
+  min-height: 59px;
+}
+.single-item input.edit{
+  margin-left: 55px;
+  padding-left: 5px;
+  font-size: 24px;
+  width: 70%;
+  min-height: 53px;
 }
