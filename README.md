@@ -1,7 +1,5 @@
 # A simple TodoApp with React
 
-http://todo.teddysitbon.fr/
-
  - Creating new tasks
  - Validating fields
  - Saving data to the local storage
